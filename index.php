@@ -59,7 +59,13 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center">Hotels</h1>
+                <h1 class="text-center">Hotels List</h1>
+            </div>
+            <div class="col-12">
+                <form action="./index.php" method="GET">
+                    
+    
+                </form>
             </div>
             <div class="col-12">
                 <table class="table table-bordered border-dark">
