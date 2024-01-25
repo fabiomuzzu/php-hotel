@@ -1,13 +1,26 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header{
-    background-color: red;
+/* CSS BODY */
+@import url("https://fonts.googleapis.com/css?family=Lobster&display=swap");
+
+body {
+  background: #fff;
+  font-family: "Lobster", cursive;
 }
 
-footer{
-    background-color: blue;
+/* CSS HEADER */
+header {
+  background-color: #222;
+  color: white;
+} 
+
+/* CSS FOOTER */
+footer {
+  background-color: #222;
+  color: white;
 }
+

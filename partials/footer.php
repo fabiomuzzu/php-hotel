@@ -8,7 +8,7 @@
                     <li>Contattaci</li>
                 </ul>
             </div>
-            <div class="col-6">
+            <div class="col-6 d-flex justify-content-end">
                 <ul>
                     <li>Contattaci</li>
                     <li>Contattaci</li>
