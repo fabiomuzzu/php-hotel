@@ -19,3 +19,12 @@ SUPER BONUS
 
 NOTA: deve essere possibile utilizzare entrambi i filtri contemporaneamente (es. ottenere una lista con hotel che dispongono di parcheggio e che hanno un voto di tre stelle o superiore)
 Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gli hotel.
+
+
+Svolgimento:
+- Creo l'array di hotel disponibili.
+- Creo all'interno del tag php un foreach(hotels in hotel)
+- All'interno del foreach stampo tutti i dati con un echo
+- Aggiungo la cdn di bootstrap
+- Creo una table
+- Gestisco la tabella per riordinare i dati
