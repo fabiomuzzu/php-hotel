@@ -28,3 +28,4 @@ Svolgimento:
 - Aggiungo la cdn di bootstrap
 - Creo una table
 - Gestisco la tabella per riordinare i dati
+- Aggiungo condizione di if/else per cambiare il valore parking da true a si e da false a no

@@ -37,9 +37,7 @@
             'vote' => 2,
             'distance_to_center' => 50
         ],
-
     ];
-
 ?>
 
 <!DOCTYPE html>
@@ -70,9 +68,9 @@
                     <tbody class="text-center">
                         <?php foreach ($hotels as $hotel) { ?>
                             <tr>
-                                <th scope="row"><?php echo ' Nome: '.$hotel['name']?></th>
+                                <th scope="row"><?php echo $hotel['name']?></th>
                                 <td><?php echo $hotel['description']?></td>
-                                <td><?php echo $hotel['parking']?></td>
+                                <td><?php echo $hotel['parking'] == true ? 'Si' : 'No'?></td>
                                 <td><?php echo $hotel['vote']?></td>
                                 <td><?php echo $hotel['distance_to_center']?></td>
                             </tr>
