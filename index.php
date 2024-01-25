@@ -61,12 +61,19 @@
             <div class="col-12">
                 <h1 class="text-center">Hotels List</h1>
             </div>
-            <div class="col-12">
-                <form action="./index.php" method="GET">
-                    
-    
-                </form>
-            </div>
+            <form action="./index.php" method="GET">
+                <div class="row">
+                    <div class="col-3">
+                        <select name="parcheggio" id="parcheggio" class="form-control">
+                            <option value="">Seleziona...</option>
+                            <option value="parcheggio">Parcheggio disponibile</option>
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        <button type="submit" class="btn bmtn-s btn-primary">Filtra</button>
+                    </div>
+                </div>
+            </form>
             <div class="col-12">
                 <table class="table table-bordered border-dark">
                     <thead class="text-center">
