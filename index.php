@@ -58,59 +58,29 @@
             </div>
             <div class="col-12">
                 <table class="table">
-                    <thead>
+                    <thead class="text-center">
                         <tr>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Descrizione</th>
-                        <th scope="col">Parcheggio</th>
-                        <th scope="col">Voto</th>
-                        <th scope="col">Distanza dal centro</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Descrizione</th>
+                            <th scope="col">Parcheggio</th>
+                            <th scope="col">Voto</th>
+                            <th scope="col">Distanza dal centro</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        </tr>
+                    <tbody class="text-center">
+                        <?php foreach ($hotels as $hotel) { ?>
+                            <tr>
+                                <th scope="row"><?php echo ' Nome: '.$hotel['name']?></th>
+                                <td><?php echo $hotel['description']?></td>
+                                <td><?php echo $hotel['parking']?></td>
+                                <td><?php echo $hotel['vote']?></td>
+                                <td><?php echo $hotel['distance_to_center']?></td>
+                            </tr>
+                        <?php }?>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    <ul>
-        <?php foreach ($hotels as $hotel) { ?>
-            <li>
-                <?php echo ' Nome: '.$hotel['name']?>
-            </li>
-            <li>
-                <?php echo ' Descrizione: '.$hotel['description']?>
-            </li>
-            <li>
-                <?php echo ' Parcheggio: '.$hotel['parking']?>
-            </li>
-            <li>
-                <?php echo ' Voto: '.$hotel['vote']?>
-            </li>
-            <li>
-                <?php echo ' Distanza dal centro: '.$hotel['distance_to_center']?>
-            </li>
-        <?php }?>
-    </ul>
 </body>
 </html>
