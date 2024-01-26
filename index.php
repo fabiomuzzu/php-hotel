@@ -3,18 +3,22 @@
 
     $filtered_hotels = $hotels;
     // verifico se è in entrata una varbiabile get
+    // se il valore di parcheggio è diverso da stringa vuota eseguo le condizoni all'interno dell'if
     if(isset($_GET['parcheggio']) && $_GET['parcheggio'] != ''){
         // variabile che conteine temporaneamente gli hotel
         $tempHotels = [];
 
+        // creo la variabile parking dal dato di parcheggio
         $parking = $_GET['parcheggio'];
 
+        // ciclo tutti gli elementi dell'array hotels
         foreach($filtered_hotels as $hotel){
+            // se il valore contenuto nell'array di hotels è uguale al valore della variabile parking impostata nel filtro inserisco nell'array temporaneo l'elemento hotel
             if($hotel['parking'] == $parking){
                 $tempHotels [] = $hotel;
             }
         }
-
+        // Se si verificano le condizioni precedenti la variabile filtered hotels sarà uguale a temphotels creata nell'if e non più a tutto l'array hotels
         $filtered_hotels = $tempHotels;
     }
     
