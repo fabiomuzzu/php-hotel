@@ -1,43 +1,23 @@
 <?php
+    @include __DIR__. '/partials/vars.php';
 
-    $hotels = [
+    $filtered_hotels = $hotels;
+    // verifico se è in entrata una varbiabile get
+    if(isset($_GET['parcheggio']) && $_GET['parcheggio'] != ''){
+        // variabile che conteine temporaneamente gli hotel
+        $tempHotels = [];
 
-        [
-            'name' => 'Hotel Belvedere',
-            'description' => 'Hotel Belvedere Descrizione',
-            'parking' => true,
-            'vote' => 4,
-            'distance_to_center' => 10.4
-        ],
-        [
-            'name' => 'Hotel Futuro',
-            'description' => 'Hotel Futuro Descrizione',
-            'parking' => true,
-            'vote' => 2,
-            'distance_to_center' => 2
-        ],
-        [
-            'name' => 'Hotel Rivamare',
-            'description' => 'Hotel Rivamare Descrizione',
-            'parking' => false,
-            'vote' => 1,
-            'distance_to_center' => 1
-        ],
-        [
-            'name' => 'Hotel Bellavista',
-            'description' => 'Hotel Bellavista Descrizione',
-            'parking' => false,
-            'vote' => 5,
-            'distance_to_center' => 5.5
-        ],
-        [
-            'name' => 'Hotel Milano',
-            'description' => 'Hotel Milano Descrizione',
-            'parking' => true,
-            'vote' => 2,
-            'distance_to_center' => 50
-        ],
-    ];
+        $parking = $_GET['parcheggio'];
+
+        foreach($filtered_hotels as $hotel){
+            if($hotel['parking'] == $parking){
+                $tempHotels [] = $hotel;
+            }
+        }
+
+        $filtered_hotels = $tempHotels;
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -64,10 +44,13 @@
             <form action="./index.php" method="GET">
                 <div class="row">
                     <div class="col-3">
-                        <select name="parcheggio" id="parcheggio" class="form-control">
-                            <option value="">Seleziona...</option>
-                            <option value="parcheggio">Parcheggio disponibile</option>
-                        </select>
+                        <div class="form-group">
+                            <select name="parcheggio" id="parcheggio" class="form-control">
+                                <option value="">Filtra per disponibilità parcheggio...</option>
+                                <option value="1">Parcheggio disponibile</option>
+                                <option value="0">Parcheggio non disponibile</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="col-3">
                         <button type="submit" class="btn bmtn-s btn-primary">Filtra</button>
@@ -87,7 +70,7 @@
                     </thead>
                     <tbody class="text-center">
                         <!-- ciclo foreach per ciclare tutti gli elementi dell'array hotels-->
-                        <?php foreach ($hotels as $hotel) { ?>
+                        <?php foreach ($filtered_hotels as $hotel) { ?>
                             <tr>
                                 <!-- utilizzo di echo per stampare a schermo i valori dell'array -->
                                 <th scope="row"><?php echo $hotel['name']?></th>
